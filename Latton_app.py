@@ -45,6 +45,8 @@ for idx,a in enumerate(df):
     df1 = pd.concat([df[idx],df1])
 df1.reset_index(inplace=True)
 
-st.dataframe(df1)
+
+
+st.dataframe(df1[["Start Number","Name"]])
 
    
