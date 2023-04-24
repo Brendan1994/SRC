@@ -70,16 +70,29 @@ df1.sort_values(by=["Week","Position"], ascending=[False, True], inplace=True)
 Names = df1.Name.drop_duplicates()
 Names.sort_values(ascending=True, inplace=True)
 
+#Unique list of Weeks
+Date = df1.Week.drop_duplicates()
+Date.sort_values(ascending=False, inplace=True)
+
 #Present text
 Racer = st.multiselect("Enter your name to filter the results",list(Names))
+Date = st.multiselect("Enter date to filter the results",list(Date))
 
 #Filter df by input
-rslt_df = df1.loc[df1['Name'].isin(Racer)]
+if Racer & Date:
+    rslt_df = df1.loc[df1['Name'].isin(Racer)] & df1.loc[df1['Week'].isin(Date)]
+elif Racer:
+    rslt_df = df1.loc[df1['Name'].isin(Racer)]
+elif Date:
+    rslt_df = df1.loc[df1['Week'].isin(Date)]
+else:
+    rslt_df = df1
 
 #Present filtered df
-#try:
-if not Racer:
-    st.dataframe(df1)
-else:
+#if not Racer:
+#    if not Date:
+#        st.dataframe(df1)
+    
+#else:
     st.dataframe(rslt_df)
-#except
+
