@@ -45,8 +45,17 @@ for idx,a in enumerate(df):
     df1 = pd.concat([df[idx],df1])
 df1.reset_index(inplace=True)
 
+# CSS to inject contained in a string
+hide_dataframe_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
 
+# Inject CSS with Markdown
+st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 
-st.dataframe(df1[["Start Number","Name"]],index=False)
+st.dataframe(df1[["Start Number","Name"]])
 
    
