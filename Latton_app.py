@@ -56,10 +56,14 @@ for idx,a in enumerate(df):
 # Inject CSS with Markdown
 #st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 
-
+#Remove index column
 df1.set_index('Position',inplace=True)
 
+#Sort Values by Week desc, Position asc
+df1.sort_values(by=["Week","Position"], ascending=[False, True], inplace=True)
+
+
 st.dataframe(df1)
-             #[['Position', 'Start Number', 'Name', 'Club', 'Split Time', 'Time', 'Speed  m.p.h.', 'Week']])
+             
 
    
