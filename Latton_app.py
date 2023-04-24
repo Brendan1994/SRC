@@ -62,8 +62,9 @@ df1.set_index('Position',inplace=True)
 #Sort Values by Week desc, Position asc
 df1.sort_values(by=["Week","Position"], ascending=[False, True], inplace=True)
 
+BP = ['Brendan Pearson']
 
-st.dataframe(df1)
-             
+rslt_df = df1.loc[df1['Name'].isin(BP)]
 
-   
+
+st.dataframe(rslt_df)
