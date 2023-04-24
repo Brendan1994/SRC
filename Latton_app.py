@@ -47,6 +47,6 @@ df1.reset_index(inplace=True)
 
 
 
-st.dataframe(df1[["Start Number","Name"]])
+st.dataframe(df1[["Start Number","Name"]],index=False)
 
    
