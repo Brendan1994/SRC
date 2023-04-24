@@ -33,7 +33,7 @@ for line in lines:
         try:
             d = datetime.strptime(line.strip(),'%d %B %Y')
             #print(d)
-            Week.append(d)
+            Week.append(d.date())
         except:
             continue
   
