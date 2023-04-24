@@ -43,7 +43,7 @@ df1 = pd.DataFrame()
 for idx,a in enumerate(df):
     df[idx]['Week'] = Week[idx]
     df1 = pd.concat([df[idx],df1])
-df1.reset_index(inplace=True)
+#df1.reset_index(inplace=True)
 
 # CSS to inject contained in a string
 #hide_dataframe_row_index = """
