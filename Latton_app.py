@@ -60,7 +60,7 @@ for idx,a in enumerate(df):
 df1.set_index('Position',inplace=True)
 
 #Sort Values by Week desc, Position asc
-df1.sort_values(by=["Week","Position"], ascending=[False, True], inplace=True)
+df1.sort_values(by=["Week","Time"], ascending=[False, True], inplace=True)
 
 #BP = ['Brendan Pearson']
 
