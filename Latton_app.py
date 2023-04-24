@@ -56,6 +56,6 @@ hide_dataframe_row_index = """
 # Inject CSS with Markdown
 st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 
-st.dataframe(df1[["Start Number","Name"]])
+st.dataframe(df1[["Position,"Start Number","Name","Club","Split Time","Time","Speed m.p.h.","Week"]])
 
    
