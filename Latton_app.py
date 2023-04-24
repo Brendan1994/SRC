@@ -62,9 +62,24 @@ df1.set_index('Position',inplace=True)
 #Sort Values by Week desc, Position asc
 df1.sort_values(by=["Week","Position"], ascending=[False, True], inplace=True)
 
-BP = ['Brendan Pearson']
+#BP = ['Brendan Pearson']
 
-rslt_df = df1.loc[df1['Name'].isin(BP)]
+#rslt_df = df1.loc[df1['Name'].isin(BP)]
 
+#Unique list of racers names
+Names = df1.Name.drop_duplicates()
+Names.sort_values(ascending=True, inplace=True)
 
-st.dataframe(rslt_df)
+#Present text
+Racer = streamlit.multiselect("Enter your name to filter the results",list(Names))
+
+#Filter df by input
+rslt_df = df1.loc[df1['Name'].isin(Racer)]
+
+#Present filtered df
+#try:
+if not Racer:
+    st.dataframe(df1)
+else:
+    st.dataframe(rslt_df)
+#except
