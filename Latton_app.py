@@ -91,7 +91,7 @@ Date = st.multiselect("Enter date to filter the results",list(Date))
 if (Racer and Date):
     rslt_df1 = df1[df1['Week'].isin(Date)]
     rslt_df = rslt_df1[rslt_df1['Name'].isin(Racer)]
-if Racer:
+elif Racer:
     rslt_df = df1[df1['Name'].isin(Racer)]
 elif Date:
     rslt_df = df1[df1['Week'].isin(Date)]
