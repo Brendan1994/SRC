@@ -71,7 +71,7 @@ Names = df1.Name.drop_duplicates()
 Names.sort_values(ascending=True, inplace=True)
 
 #Present text
-Racer = streamlit.multiselect("Enter your name to filter the results",list(Names))
+Racer = st.multiselect("Enter your name to filter the results",list(Names))
 
 #Filter df by input
 rslt_df = df1.loc[df1['Name'].isin(Racer)]
