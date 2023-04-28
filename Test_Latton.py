@@ -14,12 +14,12 @@ st.title("Latton TT Series")
 df = pd.read_html("https://www.swindon-rc.co.uk/index.php/component/content/article/104",header=0)
 
 #Add 'Week' column to each df
-#f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104")
-f = open('2022_Time_Trial_Results.html','r')
+f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104")
+#f = open('2022_Time_Trial_Results.html','r')
 
 Week = []
-#lines = f.text.readlines()
-lines = f.readlines()
+lines = f.text.readlines()
+#lines = f.readlines()
 
 for line in lines:
     if re.search('<strong style="color: #666666; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">',line):
