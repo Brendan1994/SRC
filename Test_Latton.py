@@ -18,7 +18,7 @@ f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104
 #f = open('2022_Time_Trial_Results.html','r')
 
 Week = []
-lines = f.text.readlines()
+lines = f.readlines()
 #lines = f.readlines()
 
 for line in lines:
