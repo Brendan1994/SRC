@@ -4,6 +4,10 @@ import requests as rq
 from datetime import datetime
 import re
 
+#set wide mode
+st.set_page_config(layout="wide")
+
+#Page title
 st.title("Latton TT Series") 
 
 #Create list of dataframes - 1 html table per df
