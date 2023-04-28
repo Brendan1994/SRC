@@ -3,6 +3,7 @@ import pandas as pd
 import requests as rq
 from datetime import datetime
 import re
+from lxml import html
 
 #set wide mode
 st.set_page_config(layout="wide")
@@ -16,11 +17,13 @@ df = pd.read_html("https://www.swindon-rc.co.uk/index.php/component/content/arti
 #Add 'Week' column to each df
 f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104")
 #f = open('2022_Time_Trial_Results.html','r')
-print (f)
 
 
 Week = []
-lines = f.text.readlines()
+l = link.read()
+L = html.fromstring(l)
+lines = L.xpath("//td/text()")
+#lines = f.text.readlines()
 #lines = f.readlines()
 
 for line in lines:
