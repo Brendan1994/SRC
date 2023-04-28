@@ -20,7 +20,7 @@ f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104
 
 
 Week = []
-l = link.read()
+l = f.read()
 L = html.fromstring(l)
 lines = L.xpath("//td/text()")
 #lines = f.text.readlines()
