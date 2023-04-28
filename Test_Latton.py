@@ -20,11 +20,9 @@ f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104
 
 
 Week = []
-l = f.read()
-L = html.fromstring(l)
-lines = L.xpath("//td/text()")
+
 #lines = f.text.readlines()
-#lines = f.readlines()
+
 
 for line in lines:
     if re.search('<strong style="color: #666666; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">',line):
