@@ -60,7 +60,7 @@ df['Day'] = df['Date'].dt.day_name()
 df.set_index('Position',inplace=True)
 
 #Sort Values by Week desc, Position asc
-df1.sort_values(by=["Week","Time"], ascending=[False, True], inplace=True)
+df.sort_values(by=["Week","Time"], ascending=[False, True], inplace=True)
 
 #Unique list of racers names
 Names = df.Name.drop_duplicates()
