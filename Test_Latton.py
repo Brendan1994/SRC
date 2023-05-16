@@ -33,6 +33,9 @@ df['Day'] = df['Date'].dt.day_name()
 df['type'] = type(row['Name'])
 df = df[df.type != 'date']
 
+df['Date'] = pd.to_datetime(df['Date'])
+df['Time'] = pd.to_datetime(df['Time'])
+
     #Filter DataFrame for races that took place on a Thursday or on NYD
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 
@@ -62,10 +65,10 @@ df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.
 #    df1 = pd.concat([df[idx],df1])
 
 #Remove index column
-#df.set_index('Position',inplace=True)
+df.set_index('Position',inplace=True)
 
 #Sort Values by Week desc, Position asc
-#df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
+df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
 
 #Unique list of racers names
 Names = df.Name.drop_duplicates()
