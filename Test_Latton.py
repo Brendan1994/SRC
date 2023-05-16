@@ -14,20 +14,20 @@ st.title("Latton TT Series")
 #Create list of dataframes - 1 html table per df
 #df = pd.read_html("https://www.swindon-rc.co.uk/index.php/component/content/article/104",header=0)
     #We are now creating a df using an excel spreadsheet
-    df = pd.read_excel("Results Archive 11-5-23.xlsx")
-    df = df[['Position','Start Number','Name','Club','Split Time','Time']]
+df = pd.read_excel("Results Archive 11-5-23.xlsx")
+df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 
 #Add 'Week' column to each df
 #f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104")
 #f = open('2022_Time_Trial_Results.html','r')
     #Iterate over the DataFrame, where the 'Name' column is date define 'date' variable and append this variable into a new 'Date' column
-    for index, row in df.iterrows():
-        if type(row['Name']) == pd._libs.tslibs.timestamps.Timestamp:
-            date = row['Name']
-        df.at[index,'Date'] = date
+for index, row in df.iterrows():
+    if type(row['Name']) == pd._libs.tslibs.timestamps.Timestamp:
+        date = row['Name']
+    df.at[index,'Date'] = date
 
     #Add new column with the day of the race
-    df['Day'] = df['Date'].dt.day_name()
+df['Day'] = df['Date'].dt.day_name()
 
 
 
