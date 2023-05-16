@@ -34,7 +34,7 @@ df['type'] = type(row['Name'])
 df = df[df.type != 'date']
 
 df['Date'] = pd.to_datetime(df['Date'])
-df['Time'] = pd.to_datetime(df['Time'])
+#df['Time'] = pd.to_datetime(df['Time'])
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
