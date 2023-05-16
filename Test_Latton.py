@@ -28,16 +28,16 @@ for index, row in df.iterrows():
     df.at[index,'Date'] = date
 
     #Add new column with the day of the race
-df['Day'] = df['Date'].dt.day_name()
+#df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
 df = df[df.type] != 'date'
-
-df['Date'] = pd.to_datetime(df['Date'])
+st.dataframe(df)
+#df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
-df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
+#df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 
 #Week = []
 
@@ -64,34 +64,34 @@ df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.
 #    df[idx]['Week'] = Week[idx]
 #    df1 = pd.concat([df[idx],df1])
 
-#Remove index column
-df.set_index('Position',inplace=True)
+##Remove index column
+#df.set_index('Position',inplace=True)
 
-#Sort Values by Week desc, Position asc
+##Sort Values by Week desc, Position asc
 #df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
 
-#Unique list of racers names
-Names = df.Name.drop_duplicates()
+##Unique list of racers names
+#Names = df.Name.drop_duplicates()
 #Names.sort_values(ascending=True, inplace=True)
 
-#Unique list of Weeks
-Date = df.Date.drop_duplicates()
+##Unique list of Weeks
+#Date = df.Date.drop_duplicates()
 #Date.sort_values(ascending=False, inplace=True)
 
-#Present text
-Racer = st.multiselect("Enter your name to filter the results",list(Names))
-Date = st.multiselect("Enter date to filter the results",list(Date))
+##Present text
+#Racer = st.multiselect("Enter your name to filter the results",list(Names))
+#Date = st.multiselect("Enter date to filter the results",list(Date))
 
-#Filter df by input
-if (Racer and Date):
-    rslt_df1 = df[df['Date'].isin(Date)]
-    rslt_df = rslt_df1[rslt_df1['Name'].isin(Racer)]
-elif Racer:
-    rslt_df = df[df['Name'].isin(Racer)]
-elif Date:
-    rslt_df = df[df['Date'].isin(Date)]
-else:
-    rslt_df = df
+##Filter df by input
+#if (Racer and Date):
+#    rslt_df1 = df[df['Date'].isin(Date)]
+#    rslt_df = rslt_df1[rslt_df1['Name'].isin(Racer)]
+#elif Racer:
+#    rslt_df = df[df['Name'].isin(Racer)]
+#elif Date:
+#    rslt_df = df[df['Date'].isin(Date)]
+#else:
+#    rslt_df = df
 
 #Present filtered df
-st.dataframe(rslt_df)
+#st.dataframe(rslt_df)
