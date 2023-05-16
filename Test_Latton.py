@@ -29,7 +29,12 @@ for index, row in df.iterrows():
     #Add new column with the day of the race
 df['Day'] = df['Date'].dt.day_name()
 
+    #Remove dates from rows
+df['type'] = type(row['Name'])
+df = df[df.type != 'date']
 
+    #Filter DataFrame for races that took place on a Thursday or on NYD
+df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 
 #Week = []
 
