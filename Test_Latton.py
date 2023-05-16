@@ -24,6 +24,7 @@ df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 for index, row in df.iterrows():
     if type(row['Name']) == pd._libs.tslibs.timestamps.Timestamp:
         date = row['Name']
+        df.at[index,'type'] = 'date'
     df.at[index,'Date'] = date
 
     #Add new column with the day of the race
