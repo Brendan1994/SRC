@@ -68,15 +68,15 @@ df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.
 df.set_index('Position',inplace=True)
 
 #Sort Values by Week desc, Position asc
-df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
+#df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
 
 #Unique list of racers names
 Names = df.Name.drop_duplicates()
-Names.sort_values(ascending=True, inplace=True)
+#Names.sort_values(ascending=True, inplace=True)
 
 #Unique list of Weeks
 Date = df.Date.drop_duplicates()
-Date.sort_values(ascending=False, inplace=True)
+#Date.sort_values(ascending=False, inplace=True)
 
 #Present text
 Racer = st.multiselect("Enter your name to filter the results",list(Names))
