@@ -30,7 +30,7 @@ for index, row in df.iterrows():
 df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
-#df['type'] = type(row['Name'])
+df['type'] = type(row['Name'])
 df = df[df.type != 'date']
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
