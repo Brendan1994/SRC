@@ -30,7 +30,6 @@ for index, row in df.iterrows():
 df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
-df['type'] = type(row['Name'])
 df = df[df.type != 'date']
 
 df['Date'] = pd.to_datetime(df['Date'])
