@@ -26,13 +26,13 @@ for index, row in df.iterrows():
         date = row['Name']
         df.at[index,'type'] = 'date'
     df.at[index,'Date'] = date
-st.dataframe(df)
+
     #Add new column with the day of the race
 #df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
-#df = df[df.type] != 'date'
-
+df = df[df.type] != 'date'
+st.dataframe(df)
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
