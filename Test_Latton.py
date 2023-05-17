@@ -29,7 +29,7 @@ for index, row in df.iterrows():
 
     #Add new column with the day of the race
 #df['Day'] = df['Date'].dt.day_name()
-df.set_index('Position',inplace=True)
+
     #Remove dates from rows
 df = df[df.type] != 'date'
 st.dataframe(df)
