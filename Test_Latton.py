@@ -16,7 +16,7 @@ st.title("Latton TT Series")
     #We are now creating a df using an excel spreadsheet
 df = pd.read_excel("Results Archive 11-5-23.xlsx")
 df = df[['Position','Start Number','Name','Club','Split Time','Time']]
-
+st.dataframe(df)
 #Add 'Week' column to each df
 #f = rq.get("https://www.swindon-rc.co.uk/index.php/component/content/article/104")
 #f = open('2022_Time_Trial_Results.html','r')
@@ -32,7 +32,7 @@ df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 
     #Remove dates from rows
 #df = df[df.type] != 'date'
-st.dataframe(df)
+
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
