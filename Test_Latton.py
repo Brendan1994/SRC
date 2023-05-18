@@ -4,6 +4,8 @@ import pandas as pd
 from datetime import datetime
 #import re
 #from lxml import html
+import pip
+pip.main(["install", "openpyxl"])
 
 #set wide mode
 st.set_page_config(layout="wide")
