@@ -35,7 +35,7 @@ df['Day'] = df['Date'].dt.day_name()
     #Remove dates from rows
 df = df[df.type != 'date']
 
-df['Date'] = df['Date'].dt.date
+
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
@@ -73,7 +73,7 @@ df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
 
 #Remove index column
 df.set_index('Position',inplace=True)
-
+df['Date'] = df['Date'].dt.date
 df['Type'] = df.dtypes['Date']
 
 #Sort Values by Week desc, Position asc
