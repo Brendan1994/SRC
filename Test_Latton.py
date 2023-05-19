@@ -74,6 +74,8 @@ df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
 #Remove index column
 df.set_index('Position',inplace=True)
 
+df['Type'] = type(row['Date'])
+
 #Sort Values by Week desc, Position asc
 df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
 
