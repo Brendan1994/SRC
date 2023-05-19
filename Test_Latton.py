@@ -36,7 +36,7 @@ df['Day'] = df['Date'].dt.day_name()
 df = df[df.type != 'date']
 
 
-#df['Date'] = pd.to_datetime(df['Date'])
+df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
