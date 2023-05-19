@@ -30,7 +30,7 @@ for index, row in df.iterrows():
     df.at[index,'Date'] = date
 
     #Add new column with the day of the race
-#df['Day'] = df['Date'].dt.day_name()
+df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
 df = df[df.type != 'date']
