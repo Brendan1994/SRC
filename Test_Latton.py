@@ -103,3 +103,5 @@ else:
 
 #Present filtered df
 st.dataframe(rslt_df)
+
+st.line_chart(data=rslt_df)
