@@ -36,9 +36,6 @@ df['Day'] = df['Date'].dt.day_name()
 df = df[df.type != 'date']
 
 
-#df['Date'] = pd.to_datetime(df['Date'])
-#df['Time'] = pd.to_datetime(df['Time'])
-
     #Filter DataFrame for races that took place on a Thursday or on NYD
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
     
@@ -89,7 +86,7 @@ Names.sort_values(ascending=True, inplace=True)
 Date = df.Date.drop_duplicates()
 Date.sort_values(ascending=False, inplace=True)
 
-#Present text
+#Filter text
 Racer = st.multiselect("Enter your name to filter the results",list(Names))
 Date = st.multiselect("Enter date to filter the results",list(Date))
 
