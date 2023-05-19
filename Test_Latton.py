@@ -42,7 +42,7 @@ df = df[df.type != 'date']
     #Filter DataFrame for races that took place on a Thursday or on NYD
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
     
-st.dataframe(df)
+
 #Week = []
 
 #lines = f.text.readlines()
@@ -68,9 +68,9 @@ st.dataframe(df)
 #    df[idx]['Week'] = Week[idx]
 #    df1 = pd.concat([df[idx],df1])
 
-##Remove index column
-#df.set_index('Position',inplace=True)
-
+#Remove index column
+df.set_index('Position',inplace=True)
+st.dataframe(df)
 ##Sort Values by Week desc, Position asc
 #df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
 
