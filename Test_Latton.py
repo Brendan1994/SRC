@@ -34,6 +34,7 @@ df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
 df = df[df.type != 'date']
+df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 st.dataframe(df)
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
