@@ -94,6 +94,7 @@ Date = st.multiselect("Enter date to filter the results",list(Date))
 if (Racer and Date):
     rslt_df1 = df[df['Date'].isin(Date)]
     rslt_df = rslt_df1[rslt_df1['Name'].isin(Racer)]
+    st.line_chart(data=df,x=df['Name'], y=df['Date'] )
 elif Racer:
     rslt_df = df[df['Name'].isin(Racer)]
 elif Date:
@@ -104,5 +105,4 @@ else:
 #Present filtered df
 st.dataframe(rslt_df)
 
-b = st.line_chart(data=df,x=df['Name'], y=df['Date'] )
-print(b)
+
