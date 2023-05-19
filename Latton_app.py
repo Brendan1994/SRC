@@ -12,7 +12,7 @@ st.title("Latton TT Series")
 
 #Create a df using an excel spreadsheet
 df = pd.read_excel("Results Archive 11-5-23.xlsx")
-df = df[['Position','Start Number','Name','Club','Split Time','Time']]
+df = df[['Position','Start Number','Name','Club','Split Time','Time','Speed (mph)']]
 
 #Iterate over the DataFrame, where the 'Name' column is date define 'date' variable and append this variable into a new 'Date' column
 for index, row in df.iterrows():
@@ -31,7 +31,7 @@ df = df[df.type != 'date']
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 
 #Drop 'Type' and 'Day' columns
-df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
+df = df[['Position','Start Number','Name','Club','Split Time','Time','Speed (mph)','Date']]
 
 
 #def Get_Results():
