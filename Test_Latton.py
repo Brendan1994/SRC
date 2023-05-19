@@ -40,7 +40,8 @@ df = df[df.type != 'date']
 #df['Time'] = pd.to_datetime(df['Time'])
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
-df = df.loc[(df['Day']=='Thursday')]## | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
+df = df.loc[(df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
+    #(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 st.dataframe(df)
 #Week = []
 
