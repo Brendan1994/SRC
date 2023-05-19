@@ -68,14 +68,14 @@ df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.
 #    df[idx]['Week'] = Week[idx]
 #    df1 = pd.concat([df[idx],df1])
 
+#Drop 'Type' and 'Day' columns
+df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
+
 #Remove index column
 df.set_index('Position',inplace=True)
 
 #Sort Values by Week desc, Position asc
 df.sort_values(by=["Date","Time"], ascending=[False, True], inplace=True)
-
-#Drop 'Type' and 'Day' columns
-df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
 
 #Unique list of racers names
 Names = df.Name.drop_duplicates()
