@@ -35,7 +35,7 @@ df['Day'] = df['Date'].dt.day_name()
     #Remove dates from rows
 df = df[df.type != 'date']
 
-
+df['Date'] = df['Date'].dt.date
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
