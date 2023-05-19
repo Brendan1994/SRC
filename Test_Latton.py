@@ -34,14 +34,14 @@ df['Day'] = df['Date'].dt.day_name()
 
     #Remove dates from rows
 df = df[df.type != 'date']
-df = df[['Position','Start Number','Name','Club','Split Time','Time']]
-st.dataframe(df)
+
+
 #df['Date'] = pd.to_datetime(df['Date'])
 #df['Time'] = pd.to_datetime(df['Time'])
 
     #Filter DataFrame for races that took place on a Thursday or on NYD
-#df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
-
+df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
+st.dataframe(df)
 #Week = []
 
 #lines = f.text.readlines()
