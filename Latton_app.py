@@ -102,7 +102,7 @@ Names = df.Name.drop_duplicates()
 Names.sort_values(ascending=True, inplace=True)
 
 #Unique list of Dates
-Date = df.Week.drop_duplicates()
+Date = df.Date.drop_duplicates()
 Date.sort_values(ascending=False, inplace=True)
 
 #Present text
@@ -120,12 +120,12 @@ Date = st.multiselect("Enter date to filter the results",list(Date))
 #    rslt_df = df1
 
 if (Racer and Date):
-    rslt_df1 = df[df['Week'].isin(Date)]
+    rslt_df1 = df[df['Date'].isin(Date)]
     rslt_df = rslt_df1[rslt_df1['Name'].isin(Racer)]
 elif Racer:
     rslt_df = df[df['Name'].isin(Racer)]
 elif Date:
-    rslt_df = df[df['Week'].isin(Date)]
+    rslt_df = df[df['Date'].isin(Date)]
 else:
     rslt_df = df
 
