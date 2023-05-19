@@ -104,4 +104,4 @@ else:
 #Present filtered df
 st.dataframe(rslt_df)
 
-st.line_chart(data=df,x=df['Name'], y=df['Date'] )
+print(st.line_chart(data=df,x=df['Name'], y=df['Date'] ))
