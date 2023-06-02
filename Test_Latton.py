@@ -16,7 +16,7 @@ st.title("Latton TT Series")
 #Create list of dataframes - 1 html table per df
 #df = pd.read_html("https://www.swindon-rc.co.uk/index.php/component/content/article/104",header=0)
     #We are now creating a df using an excel spreadsheet
-df = pd.read_excel("Results Archive 11-5-23.xlsx")
+df = pd.read_excel("Results Archive 01-6-23.xlsx")
 df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 
 #Add 'Week' column to each df
