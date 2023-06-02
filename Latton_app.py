@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 st.title("Latton TT Series")
 
 #Create a df using an excel spreadsheet
-df = pd.read_excel("Results Archive 11-5-23.xlsx")
+df = pd.read_excel("Results Archive 01-6-23.xlsx")
 df = df[['Position','Start Number','Name','Club','Split Time','Time','Speed (mph)']]
 
 #Iterate over the DataFrame, where the 'Name' column is date define 'date' variable and append this variable into a new 'Date' column
