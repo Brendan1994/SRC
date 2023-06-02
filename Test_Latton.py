@@ -42,26 +42,27 @@ df = pd.read_html("http://test2.swindon-rc.co.uk/?page_id=240",header=0)
 #Add 'Week' column to each df
 f = rq.get("http://test2.swindon-rc.co.uk/?page_id=240")
 #f = open('2022_Time_Trial_Results.html','r')
-f
+
 Week = []
 
 #lines = f.text.readlines()
+lines = f.text.splitlines()     #ChatGPT suggests using splitlines() rather than readlines()
 
 
-#for line in lines:
+for line in lines:
 #    if re.search('<strong style="color: #666666; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">',line):     --This was for the old website which is no longer being updated
-#    if re.search('<p class="has-black-color has-text-color has-medium-font-size">',line):
-#        line = re.sub('<(.*?)\>','',line)
-#        line = re.sub('&nbsp;',' ',line)
-#        line = re.sub("New Year's Day ",'1 January ',line)
+    if re.search('<p class="has-black-color has-text-color has-medium-font-size">',line):
+        line = re.sub('<(.*?)\>','',line)
+        line = re.sub('&nbsp;',' ',line)
+        line = re.sub("New Year's Day ",'1 January ',line)
         #print(line)
-#        try:
-#            d = datetime.strptime(line.strip(),'%d %B %Y')
+        try:
+            d = datetime.strptime(line.strip(),'%d %B %Y')
             #print(d)
-#            Week.append(d.date())
-#        except:
-#            continue
-#Week  
+            Week.append(d.date())
+        except:
+            continue
+Week  
 #Append df's into single df
 #df1 = pd.DataFrame()
 
