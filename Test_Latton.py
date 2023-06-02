@@ -17,26 +17,29 @@ st.title("Latton TT Series")
 df = pd.read_excel("Results Archive 01-6-23.xlsx")
 df = df[['Position','Start Number','Name','Club','Split Time','Time']]
 
-    #Iterate over the DataFrame, where the 'Name' column is date define 'date' variable and append this variable into a new 'Date' column
+#Iterate over the DataFrame, where the 'Name' column is date define 'date' variable and append this variable into a new 'Date' column
 for index, row in df.iterrows():
     if type(row['Name']) == pd._libs.tslibs.timestamps.Timestamp:
         date = row['Name']
         df.at[index,'type'] = 'date'
     df.at[index,'Date'] = date
     
-    #Add new column with the day of the race
+#Add new column with the day of the race
 df['Day'] = df['Date'].dt.day_name()
 
-    #Remove dates from rows
+#Remove dates from rows
 df = df[df.type != 'date']
 
-
-    #Filter DataFrame for races that took place on a Thursday or on NYD
+#Filter DataFrame for races that took place on a Thursday or on NYD
 df = df.loc[(df['Day']=='Thursday') | (df['Date'].dt.day == 1) & (df['Date'].dt.month == 1)]
 
+#Drop 'Type' and 'Day' columns
+df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
+
+#----------------------------------------------------
 
 #Create list of dataframes - 1 html table per df
-df = pd.read_html("http://test2.swindon-rc.co.uk/?page_id=240",header=0)
+dff = pd.read_html("http://test2.swindon-rc.co.uk/?page_id=240",header=0)
 
 
 #Add 'Week' column to each df
@@ -70,8 +73,7 @@ Week
 #    df[idx]['Week'] = Week[idx]
 #    df1 = pd.concat([df[idx],df1])
 
-#Drop 'Type' and 'Day' columns
-df = df[['Position','Start Number','Name','Club','Split Time','Time','Date']]
+
 
 #Remove index column
 df.set_index('Position',inplace=True)
