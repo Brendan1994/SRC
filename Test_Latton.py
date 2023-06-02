@@ -42,7 +42,7 @@ df = pd.read_html("http://test2.swindon-rc.co.uk/?page_id=240",header=0)
 #Add 'Week' column to each df
 f = rq.get("http://test2.swindon-rc.co.uk/?page_id=240")
 #f = open('2022_Time_Trial_Results.html','r')
-print(f)
+f
 Week = []
 
 #lines = f.text.readlines()
