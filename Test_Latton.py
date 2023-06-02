@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests as rq
 from datetime import datetime
-#import re
+import re
 #from lxml import html
 import pip
 pip.main(["install", "openpyxl"])
