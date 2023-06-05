@@ -73,7 +73,7 @@ df1 = pd.DataFrame()
     df[idx]['Week'] = Week[idx]
     df1 = pd.concat([df[idx],df1])
 
-
+df1
 
 #Remove index column
 df.set_index('Position',inplace=True)
