@@ -65,9 +65,9 @@ for line in lines:
             Week.append(d.date())
         except:
             continue
-Week  
+#Week  
 #Append df's into single df
-#df1 = pd.DataFrame()
+df1 = pd.DataFrame()
 
 #for idx,a in enumerate(df):
 #    df[idx]['Week'] = Week[idx]
