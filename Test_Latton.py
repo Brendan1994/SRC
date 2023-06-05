@@ -69,11 +69,11 @@ for line in lines:
 #Append df's into single df
 df1 = pd.DataFrame()
 
-for idx,a in enumerate(df):
-    df[idx]['Week'] = Week[idx]
-    df1 = pd.concat([df[idx],df1])
+for idx,a in enumerate(dff):
+    dff[idx]['Week'] = Week[idx]
+    df1 = pd.concat([dff[idx],df1])
 
-df1
+df = pd.concat([df1,df])
 
 #Remove index column
 df.set_index('Position',inplace=True)
