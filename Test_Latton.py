@@ -70,8 +70,8 @@ for line in lines:
 df1 = pd.DataFrame()
 
 #for idx,a in enumerate(df):
-#    df[idx]['Week'] = Week[idx]
-#    df1 = pd.concat([df[idx],df1])
+    df[idx]['Week'] = Week[idx]
+    df1 = pd.concat([df[idx],df1])
 
 
 
