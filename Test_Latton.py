@@ -69,7 +69,7 @@ for line in lines:
 #Append df's into single df
 df1 = pd.DataFrame()
 
-#for idx,a in enumerate(df):
+for idx,a in enumerate(df):
     df[idx]['Week'] = Week[idx]
     df1 = pd.concat([df[idx],df1])
 
